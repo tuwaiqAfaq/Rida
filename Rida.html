@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحباً بك في لِيلاس</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fefae0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+```
+    .card {
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        border: 2px solid #d4a373;
+    }
+
+    h1 {
+        color: #d4a373;
+        margin-bottom: 10px;
+        font-size: 2rem;
+    }
+
+    p {
+        color: #666;
+        font-size: 1.1rem;
+        margin: 10px 0;
+    }
+
+    .coupon-box {
+        background: #f8f9fa;
+        border: 2px dashed #d4a373;
+        padding: 15px;
+        margin: 25px 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s;
+        border-radius: 10px;
+    }
+
+    .coupon-box:hover {
+        background: #f0f1f3;
+    }
+
+    .coupon-box:active {
+        transform: scale(0.95);
+    }
+
+    .coupon-box span {
+        display: block;
+        color: #e63946;
+        letter-spacing: 2px;
+    }
+
+    .hint {
+        font-size: 0.8rem;
+        color: #999;
+        margin-top: 5px;
+    }
+
+    .success-msg {
+        display: none;
+        color: #2a9d8f;
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+</style>
+```
+
+</head>
+<body>
+
+<div class="card">
+    <h1>✨ حياك!</h1>
+    <p>انسخ كود الخصم واستمتع بطلبك 👇</p>
+
+```
+<div class="coupon-box" onclick="copyAndRedirect()">
+    <span id="couponCode">RIDA10</span>
+    <div class="hint">(اضغط للنسخ والتوجه للإنستقرام)</div>
+</div>
+
+<div id="msg" class="success-msg">✅ تم النسخ! جاري تحويلك...</div>
+```
+
+</div>
+
+<script>
+    function copyAndRedirect() {
+        const code = document.getElementById('couponCode').innerText;
+        
+        navigator.clipboard.writeText(code).then(() => {
+            const msg = document.getElementById('msg');
+            msg.style.display = 'block';
+
+            setTimeout(() => {
+                window.location.href = "https://www.instagram.com/lilasksa";
+            }, 1000);
+        }).catch(() => {
+            alert('تم نسخ الكود: ' + code);
+            setTimeout(() => {
+                window.location.href = "https://www.instagram.com/lilasksa";
+            }, 1000);
+        });
+    }
+</script>
+
+</body>
+</html>
