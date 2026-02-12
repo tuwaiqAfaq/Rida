@@ -6,170 +6,152 @@
     <title>مرحباً بك في لِيلاس</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --purple-bg: #a864a8; /* لون الخلفية البنفسجي */
-            --purple-dark: #5a2d5a; /* لون النص البنفسجي الداكن */
-            --gold-text: #fceeb5; /* لون النص الذهبي */
-            --card-bg-overlay: rgba(255, 255, 255, 0.1); /* شفافية خفيفة للبطاقة */
-            --coupon-bg: #eaddde; /* لون خلفية الكود الفاتح */
+            --bg-color: #f3e5f5; /* خلفية موف فاتح جداً */
+            --card-bg: #ffffff;
+            --text-primary: #4a148c; /* بنفسجي غامق للنصوص */
+            --text-secondary: #7b4b94; /* بنفسجي متوسط */
+            --accent-gold: #c5a059; /* ذهبي هادئ */
         }
 
         body {
-            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* خلفية بنفسجية متدرجة ولامعة تشبه الصورة */
-            background: 
-                radial-gradient(circle, transparent 20%, var(--purple-bg) 20%, var(--purple-bg) 80%, transparent 80%, transparent) 0% 0% / 6em 6em,
-                radial-gradient(circle, transparent 20%, var(--purple-bg) 20%, var(--purple-bg) 80%, transparent 80%, transparent) 3em 3em / 6em 6em,
-                linear-gradient(135deg, #c68cc6 0%, var(--purple-bg) 50%, #8a4d8a 100%);
-            background-blend-mode: multiply;
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            /* تدرج لوني ناعم جداً للخلفية */
+            background-image: linear-gradient(135deg, #fdfbf7 0%, #ede7f6 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            color: white;
+            color: var(--text-primary);
         }
-
-        /* إضافة الإطار المزخرف */
-        .ornamental-frame {
-            padding: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.5);
-            border-radius: 15px;
-            position: relative;
-            max-width: 450px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        /* زخارف الزوايا (محاكاة بسيطة) */
-        .ornamental-frame::before,
-        .ornamental-frame::after {
-            content: '❧'; /* رمز زخرفي */
-            position: absolute;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 0;
-        }
-        .ornamental-frame::before { top: 10px; left: 10px; transform: rotate(-45deg); }
-        .ornamental-frame::after { bottom: 10px; right: 10px; transform: rotate(135deg); }
-
 
         .card {
-            /* خلفية شبه شفافة لتبرز النص */
-            background: var(--card-bg-overlay);
+            background: var(--card-bg);
             padding: 3rem 2rem;
-            border-radius: 0; /* إزالة الحواف الدائرية لتناسب الإطار */
-            box-shadow: none;
+            border-radius: 12px;
+            /* ظل ناعم جداً */
+            box-shadow: 0 10px 40px rgba(74, 20, 140, 0.05);
             text-align: center;
+            max-width: 400px;
             width: 100%;
-            border: none;
-            backdrop-filter: blur(5px); /* تأثير ضبابي خفيف */
+            position: relative;
+            /* إطار مزدوج ناعم يعطي فخامة بدون إزعاج */
+            border: 1px solid #e1bee7;
+            outline: 4px solid rgba(225, 190, 231, 0.3);
+            outline-offset: -10px;
         }
 
         h1 {
-            color: white;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            line-height: 1.4;
         }
-        
-        /* تنسيق النجمة الذهبية */
-        .gold-star {
-            color: var(--gold-text);
-            font-size: 1.8rem;
-            vertical-align: middle;
+
+        .sparkle {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
         }
 
         p {
-            color: #e0e0e0;
-            font-size: 1.3rem;
-            margin: 1rem 0 2rem;
-            font-weight: 400;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin: 0.5rem 0 2rem;
+            font-weight: 300;
         }
 
-        /* تنسيق مربع الكود */
+        /* تصميم الكوبون الهادئ */
         .coupon-box {
-            background: var(--coupon-bg);
-            /* حدود متقطعة مثل الصورة */
-            border: 2px dashed var(--purple-dark);
-            padding: 15px 25px;
-            margin: 0 auto; /* توسيط */
-            display: inline-block; /* ليأخذ حجم المحتوى */
+            background: #fafafa;
+            border: 1px dashed var(--text-secondary);
+            padding: 15px 30px;
+            margin: 0 auto;
+            display: inline-block;
             cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-            border-radius: 12px;
-            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
         .coupon-box:hover {
-            background: #f0e4e6; /* لون أفتح عند التحويم */
+            background: #f3e5f5;
+            border-color: var(--text-primary);
+            transform: translateY(-2px);
         }
 
-        .coupon-box:active {
-            transform: scale(0.97);
-        }
-
-        /* تنسيق كود الخصم */
         .coupon-box span#couponCode {
             display: block;
-            color: var(--purple-dark);
-            letter-spacing: 1px;
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 5px;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        /* تنسيق نص التلميح */
         .hint {
-            font-size: 0.9rem;
-            color: var(--purple-dark);
-            margin-top: 0;
-            font-weight: 600;
+            font-size: 0.8rem;
+            color: #999;
+            font-weight: normal;
         }
 
-        /* تنسيق رسالة النجاح */
         .success-msg {
             display: none;
-            color: var(--gold-text); /* لون ذهبي لرسالة النجاح */
-            font-weight: bold;
+            color: #2e7d32; /* أخضر هادئ للنجاح */
+            font-weight: 500;
             margin-top: 20px;
-            font-size: 1.1rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+            background: #e8f5e9;
+            padding: 8px;
+            border-radius: 50px;
+            display: inline-block; /* يظهر فقط عند الحاجة */
+            opacity: 0; /* مخفي في البداية */
+            transition: opacity 0.3s;
         }
+        
+        /* كلاس مساعد لإظهار الرسالة */
+        .show-msg {
+            display: inline-block !important;
+            opacity: 1 !important;
+        }
+
     </style>
 </head>
 <body>
 
-<div class="ornamental-frame">
-    <div class="card">
-        <h1>إجعل فعاليتك<br>حديث الجميع <span class="gold-star">✨</span></h1>
-        <p>تنفيذ . تجربة متكاملة . نتائج استثنائية!</p>
+<div class="card">
+    <h1>إجعل فعاليتك<br>حديث الجميع <span class="sparkle">✨</span></h1>
+    <p>تنفيذ متقن . تجربة متكاملة</p>
 
-        <div class="coupon-box" onclick="copyAndRedirect()">
-            <span id="couponCode">RIDA10</span>
-            <div class="hint">(اضغط للنسخ والتوجه للإنستقرام)</div>
-        </div>
+    <div class="coupon-box" onclick="copyAndRedirect()">
+        <span id="couponCode">RIDA10</span>
+        <div class="hint">(اضغط للنسخ)</div>
+    </div>
 
-        <div id="msg" class="success-msg">✅ تم النسخ! جاري تحويلك...</div>
+    <div style="height: 40px; margin-top: 10px;"> <div id="msg" class="success-msg">✅ تم النسخ! جاري تحويلك...</div>
     </div>
 </div>
 
 <script>
-    // السكربت كما هو، لا يحتاج تعديل
     function copyAndRedirect() {
         const code = document.getElementById('couponCode').innerText;
+        const msgElement = document.getElementById('msg');
         
         navigator.clipboard.writeText(code).then(() => {
-            const msg = document.getElementById('msg');
-            msg.style.display = 'block';
+            // إظهار الرسالة
+            msgElement.classList.add('show-msg');
+
             setTimeout(() => {
                 window.location.href = "https://www.instagram.com/lilasksa";
-            }, 1000);
+            }, 1200);
         }).catch(() => {
-            alert('تم نسخ الكود: ' + code);
+            // حل بديل للمتصفحات القديمة
+            prompt("انسخ الكود يدوياً:", code);
             window.location.href = "https://www.instagram.com/lilasksa";
         });
     }
@@ -177,3 +159,5 @@
 
 </body>
 </html>
+
+
