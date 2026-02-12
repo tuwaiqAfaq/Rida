@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -17,87 +16,100 @@
             padding: 20px;
         }
 
-```
-    .card {
-        background: linear-gradient(180deg, #C8A5CA 0%, #B084B5 100%);
-        padding: 2rem;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        text-align: center;
-        max-width: 400px;
-        width: 100%;
-        border: 6px solid #fff;
-    }
+        .card {
+            background: linear-gradient(180deg, #C8A5CA 0%, #B084B5 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            border: 6px solid #fff;
+            
+            /* التعديل الجديد: لضمان التوسيط العمودي والأفقي للعناصر */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    h1 {
-        color: #fff;
-        margin-bottom: 10px;
-        font-size: 1.8rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
+        h1 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            width: 100%;
+        }
 
-    p {
-        color: #fff;
-        font-size: 1.3rem;
-        margin: 10px 0 15px 0;
-        font-weight: bold;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
-    
-    .features {
-        color: rgba(255,255,255,0.95);
-        font-size: 0.9rem;
-        margin: 5px 0 25px 0;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
+        p {
+            color: #fff;
+            font-size: 1.3rem;
+            margin: 5px 0 15px 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .features {
+            color: rgba(255,255,255,0.95);
+            font-size: 0.9rem;
+            margin: 5px 0 25px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
 
-    .coupon-box {
-        background: rgba(255,255,255,0.95);
-        border: 3px dashed #7B4A7E;
-        padding: 15px;
-        margin: 25px 0;
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.2s;
-        border-radius: 10px;
-    }
+        .coupon-box {
+            background: rgba(255,255,255,0.95);
+            border: 3px dashed #7B4A7E;
+            padding: 15px 30px; /* زيادة التباعد الجانبي */
+            margin: 20px auto; /* Auto يضمن التوسيط */
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border-radius: 10px;
+            
+            /* التعديل الجديد: الصندوق يأخذ حجم المحتوى فقط */
+            width: fit-content;
+            min-width: 200px; /* عرض أدنى لضمان الشكل */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .coupon-box:hover {
-        background: #fff;
-        transform: translateY(-2px);
-    }
+        .coupon-box:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
 
-    .coupon-box:active {
-        transform: scale(0.95);
-    }
+        .coupon-box:active {
+            transform: scale(0.95);
+        }
 
-    .coupon-box span {
-        display: block;
-        color: #5A2D5C;
-        letter-spacing: 3px;
-        font-size: 2rem;
-    }
+        .coupon-box span {
+            display: block;
+            color: #5A2D5C;
+            letter-spacing: 3px;
+            font-size: 2rem;
+        }
 
-    .hint {
-        font-size: 0.8rem;
-        color: #7B4A7E;
-        margin-top: 5px;
-    }
+        .hint {
+            font-size: 0.8rem;
+            color: #7B4A7E;
+            margin-top: 8px;
+            font-weight: normal;
+        }
 
-    .success-msg {
-        display: none;
-        color: #fff;
-        background: rgba(42, 157, 143, 0.9);
-        padding: 12px 20px;
-        border-radius: 10px;
-        font-weight: bold;
-        margin-top: 10px;
-        font-size: 1rem;
-    }
-</style>
-```
-
+        .success-msg {
+            display: none;
+            color: #fff;
+            background: rgba(42, 157, 143, 0.9);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1rem;
+            width: fit-content;
+        }
+    </style>
 </head>
 <body>
 
@@ -106,15 +118,12 @@
     <p>حديث الجميع ✨</p>
     <div class="features">تنفيذ متقن .. تجربة متكاملة .. نتائج استثنائية!</div>
 
-```
-<div class="coupon-box" onclick="copyAndRedirect()">
-    <span id="couponCode">RIDA10</span>
-    <div class="hint">(اضغط للنسخ والحصول على كود الخصم)</div>
-</div>
+    <div class="coupon-box" onclick="copyAndRedirect()">
+        <span id="couponCode">RIDA10</span>
+        <div class="hint">(اضغط للنسخ والحصول على كود الخصم)</div>
+    </div>
 
-<div id="msg" class="success-msg">✅ تم النسخ! جاري تحويلك...</div>
-```
-
+    <div id="msg" class="success-msg">✅ تم النسخ! جاري تحويلك...</div>
 </div>
 
 <script>
@@ -129,10 +138,9 @@
                 window.location.href = "https://www.instagram.com/lilasksa";
             }, 1000);
         }).catch(() => {
-            alert('تم نسخ الكود: ' + code);
-            setTimeout(() => {
-                window.location.href = "https://www.instagram.com/lilasksa";
-            }, 1000);
+            // حل بديل في حال فشل النسخ التلقائي
+            prompt("انسخ الكود:", code);
+            window.location.href = "https://www.instagram.com/lilasksa";
         });
     }
 </script>
