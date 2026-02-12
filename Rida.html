@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
@@ -59,7 +60,7 @@
 
     h1 {
         color: #fff;
-        font-size: clamp(1.4rem, 3.5vw, 1.7rem);
+        font-size: 1.4rem;
         margin-bottom: 5px;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         font-weight: bold;
@@ -67,7 +68,7 @@
 
     .subtitle {
         color: #fff;
-        font-size: clamp(1.2rem, 4vw, 1.5rem);
+        font-size: 1.3rem;
         margin: 8px 0 15px 0;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         font-weight: bold;
@@ -75,9 +76,30 @@
 
     .features {
         color: rgba(255,255,255,0.95);
-        font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+        font-size: 0.85rem;
         margin-bottom: 20px;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    @media (min-width: 400px) {
+        h1 {
+            font-size: 1.6rem;
+        }
+        .subtitle {
+            font-size: 1.4rem;
+        }
+        .features {
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (min-width: 600px) {
+        h1 {
+            font-size: 1.7rem;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+        }
     }
 
     .coupon-box {
@@ -103,15 +125,33 @@
     .coupon-code {
         display: block;
         color: #5A2D5C;
-        font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+        font-size: 1.8rem;
         font-weight: bold;
         letter-spacing: 3px;
         margin-bottom: 8px;
     }
 
     .hint {
-        font-size: clamp(0.7rem, 2.2vw, 0.85rem);
+        font-size: 0.75rem;
         color: #7B4A7E;
+    }
+    
+    @media (min-width: 400px) {
+        .coupon-code {
+            font-size: 2rem;
+        }
+        .hint {
+            font-size: 0.8rem;
+        }
+    }
+    
+    @media (min-width: 600px) {
+        .coupon-code {
+            font-size: 2.2rem;
+        }
+        .hint {
+            font-size: 0.85rem;
+        }
     }
 
     .success-msg {
