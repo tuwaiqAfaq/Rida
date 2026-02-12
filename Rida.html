@@ -15,6 +15,7 @@
             min-height: 100vh;
             margin: 0;
             padding: 20px;
+            box-sizing: border-box;
         }
 
 ```
@@ -24,10 +25,11 @@
         border-radius: 15px;
         text-align: center;
         max-width: 500px;
-        width: 100%;
+        width: 90%;
         border: 8px solid #fff;
         box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         position: relative;
+        box-sizing: border-box;
     }
 
     .card::before,
@@ -57,7 +59,7 @@
 
     h1 {
         color: #fff;
-        font-size: 1.8rem;
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
         margin-bottom: 5px;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         font-weight: bold;
@@ -65,7 +67,7 @@
 
     .subtitle {
         color: #fff;
-        font-size: 1.6rem;
+        font-size: clamp(1.3rem, 4.5vw, 1.6rem);
         margin: 10px 0 20px 0;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         font-weight: bold;
@@ -73,7 +75,7 @@
 
     .features {
         color: rgba(255,255,255,0.95);
-        font-size: 0.95rem;
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
         margin-bottom: 25px;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     }
@@ -101,14 +103,14 @@
     .coupon-code {
         display: block;
         color: #5A2D5C;
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
         font-weight: bold;
         letter-spacing: 3px;
         margin-bottom: 8px;
     }
 
     .hint {
-        font-size: 0.9rem;
+        font-size: clamp(0.75rem, 2.5vw, 0.9rem);
         color: #7B4A7E;
     }
 
