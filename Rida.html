@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كود خصم لِيلاس</title>
+    <title>مرحباً بك في لِيلاس</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,142 +15,73 @@
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            box-sizing: border-box;
         }
 
 ```
     .card {
         background: linear-gradient(180deg, #C8A5CA 0%, #B084B5 100%);
-        padding: 2rem 1.5rem;
-        border-radius: 15px;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         text-align: center;
-        max-width: 450px;
-        width: 90%;
+        max-width: 400px;
+        width: 100%;
         border: 6px solid #fff;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-        position: relative;
-        box-sizing: border-box;
-    }
-
-    .card::before,
-    .card::after {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        border: 2px solid rgba(255,255,255,0.8);
-    }
-
-    .card::before {
-        top: 8px;
-        right: 8px;
-        border-bottom: none;
-        border-left: none;
-        border-top-right-radius: 8px;
-    }
-
-    .card::after {
-        top: 8px;
-        left: 8px;
-        border-bottom: none;
-        border-right: none;
-        border-top-left-radius: 8px;
     }
 
     h1 {
         color: #fff;
-        font-size: 1.4rem;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        font-size: 1.8rem;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        font-weight: bold;
     }
 
-    .subtitle {
+    p {
         color: #fff;
         font-size: 1.3rem;
-        margin: 8px 0 15px 0;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        margin: 10px 0 5px 0;
         font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     }
-
+    
     .features {
         color: rgba(255,255,255,0.95);
-        font-size: 0.85rem;
-        margin-bottom: 20px;
+        font-size: 0.9rem;
+        margin: 5px 0 20px 0;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
-    
-    @media (min-width: 400px) {
-        h1 {
-            font-size: 1.6rem;
-        }
-        .subtitle {
-            font-size: 1.4rem;
-        }
-        .features {
-            font-size: 0.9rem;
-        }
-    }
-    
-    @media (min-width: 600px) {
-        h1 {
-            font-size: 1.7rem;
-        }
-        .subtitle {
-            font-size: 1.5rem;
-        }
     }
 
     .coupon-box {
         background: rgba(255,255,255,0.95);
         border: 3px dashed #7B4A7E;
-        padding: 18px 25px;
-        margin: 25px auto;
-        border-radius: 12px;
+        padding: 15px;
+        margin: 25px 0;
+        font-size: 1.5rem;
+        font-weight: bold;
         cursor: pointer;
-        transition: all 0.3s;
-        max-width: 320px;
+        transition: transform 0.2s;
+        border-radius: 10px;
     }
 
     .coupon-box:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        background: #fff;
+        transform: translateY(-2px);
     }
 
     .coupon-box:active {
-        transform: scale(0.97);
+        transform: scale(0.95);
     }
 
-    .coupon-code {
+    .coupon-box span {
         display: block;
         color: #5A2D5C;
-        font-size: 1.8rem;
-        font-weight: bold;
-        letter-spacing: 3px;
-        margin-bottom: 8px;
+        letter-spacing: 2px;
     }
 
     .hint {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         color: #7B4A7E;
-    }
-    
-    @media (min-width: 400px) {
-        .coupon-code {
-            font-size: 2rem;
-        }
-        .hint {
-            font-size: 0.8rem;
-        }
-    }
-    
-    @media (min-width: 600px) {
-        .coupon-code {
-            font-size: 2.2rem;
-        }
-        .hint {
-            font-size: 0.85rem;
-        }
+        margin-top: 5px;
     }
 
     .success-msg {
@@ -161,31 +91,8 @@
         padding: 12px 20px;
         border-radius: 10px;
         font-weight: bold;
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 1rem;
-    }
-
-    .corner-bottom-left,
-    .corner-bottom-right {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        border: 2px solid rgba(255,255,255,0.8);
-        bottom: 8px;
-    }
-
-    .corner-bottom-left {
-        left: 8px;
-        border-top: none;
-        border-right: none;
-        border-bottom-left-radius: 8px;
-    }
-
-    .corner-bottom-right {
-        right: 8px;
-        border-top: none;
-        border-left: none;
-        border-bottom-right-radius: 8px;
     }
 </style>
 ```
@@ -195,26 +102,23 @@
 
 <div class="card">
     <h1>✨ اجعل فعاليتك</h1>
-    <div class="subtitle">حديث الجميع</div>
+    <p>حديث الجميع</p>
     <div class="features">تنفذ · تجربة متكاملة · نتائج استثنائية</div>
 
 ```
 <div class="coupon-box" onclick="copyAndRedirect()">
-    <span class="coupon-code">RIDA10</span>
+    <span id="couponCode">RIDA10</span>
     <div class="hint">(اضغط للنسخ والحصول على كود الخصم)</div>
 </div>
 
 <div id="msg" class="success-msg">✅ تم النسخ! جاري تحويلك...</div>
-
-<div class="corner-bottom-left"></div>
-<div class="corner-bottom-right"></div>
 ```
 
 </div>
 
 <script>
     function copyAndRedirect() {
-        const code = document.querySelector('.coupon-code').innerText;
+        const code = document.getElementById('couponCode').innerText;
         
         navigator.clipboard.writeText(code).then(() => {
             const msg = document.getElementById('msg');
