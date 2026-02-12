@@ -1,122 +1,176 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مرحباً بك في لِيلاس</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --purple-bg: #a864a8; /* لون الخلفية البنفسجي */
+            --purple-dark: #5a2d5a; /* لون النص البنفسجي الداكن */
+            --gold-text: #fceeb5; /* لون النص الذهبي */
+            --card-bg-overlay: rgba(255, 255, 255, 0.1); /* شفافية خفيفة للبطاقة */
+            --coupon-bg: #eaddde; /* لون خلفية الكود الفاتح */
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fefae0;
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* خلفية بنفسجية متدرجة ولامعة تشبه الصورة */
+            background: 
+                radial-gradient(circle, transparent 20%, var(--purple-bg) 20%, var(--purple-bg) 80%, transparent 80%, transparent) 0% 0% / 6em 6em,
+                radial-gradient(circle, transparent 20%, var(--purple-bg) 20%, var(--purple-bg) 80%, transparent 80%, transparent) 3em 3em / 6em 6em,
+                linear-gradient(135deg, #c68cc6 0%, var(--purple-bg) 50%, #8a4d8a 100%);
+            background-blend-mode: multiply;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
+            color: white;
         }
 
-```
-    .card {
-        background: white;
-        padding: 2rem;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        text-align: center;
-        max-width: 400px;
-        width: 100%;
-        border: 2px solid #d4a373;
-    }
+        /* إضافة الإطار المزخرف */
+        .ornamental-frame {
+            padding: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            position: relative;
+            max-width: 450px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        /* زخارف الزوايا (محاكاة بسيطة) */
+        .ornamental-frame::before,
+        .ornamental-frame::after {
+            content: '❧'; /* رمز زخرفي */
+            position: absolute;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 0;
+        }
+        .ornamental-frame::before { top: 10px; left: 10px; transform: rotate(-45deg); }
+        .ornamental-frame::after { bottom: 10px; right: 10px; transform: rotate(135deg); }
 
-    h1 {
-        color: #d4a373;
-        margin-bottom: 10px;
-        font-size: 2rem;
-    }
 
-    p {
-        color: #666;
-        font-size: 1.1rem;
-        margin: 10px 0;
-    }
+        .card {
+            /* خلفية شبه شفافة لتبرز النص */
+            background: var(--card-bg-overlay);
+            padding: 3rem 2rem;
+            border-radius: 0; /* إزالة الحواف الدائرية لتناسب الإطار */
+            box-shadow: none;
+            text-align: center;
+            width: 100%;
+            border: none;
+            backdrop-filter: blur(5px); /* تأثير ضبابي خفيف */
+        }
 
-    .coupon-box {
-        background: #f8f9fa;
-        border: 2px dashed #d4a373;
-        padding: 15px;
-        margin: 25px 0;
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.2s;
-        border-radius: 10px;
-    }
+        h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        /* تنسيق النجمة الذهبية */
+        .gold-star {
+            color: var(--gold-text);
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
 
-    .coupon-box:hover {
-        background: #f0f1f3;
-    }
+        p {
+            color: #e0e0e0;
+            font-size: 1.3rem;
+            margin: 1rem 0 2rem;
+            font-weight: 400;
+        }
 
-    .coupon-box:active {
-        transform: scale(0.95);
-    }
+        /* تنسيق مربع الكود */
+        .coupon-box {
+            background: var(--coupon-bg);
+            /* حدود متقطعة مثل الصورة */
+            border: 2px dashed var(--purple-dark);
+            padding: 15px 25px;
+            margin: 0 auto; /* توسيط */
+            display: inline-block; /* ليأخذ حجم المحتوى */
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            border-radius: 12px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        }
 
-    .coupon-box span {
-        display: block;
-        color: #e63946;
-        letter-spacing: 2px;
-    }
+        .coupon-box:hover {
+            background: #f0e4e6; /* لون أفتح عند التحويم */
+        }
 
-    .hint {
-        font-size: 0.8rem;
-        color: #999;
-        margin-top: 5px;
-    }
+        .coupon-box:active {
+            transform: scale(0.97);
+        }
 
-    .success-msg {
-        display: none;
-        color: #2a9d8f;
-        font-weight: bold;
-        margin-top: 10px;
-        font-size: 1rem;
-    }
-</style>
-```
+        /* تنسيق كود الخصم */
+        .coupon-box span#couponCode {
+            display: block;
+            color: var(--purple-dark);
+            letter-spacing: 1px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
 
+        /* تنسيق نص التلميح */
+        .hint {
+            font-size: 0.9rem;
+            color: var(--purple-dark);
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        /* تنسيق رسالة النجاح */
+        .success-msg {
+            display: none;
+            color: var(--gold-text); /* لون ذهبي لرسالة النجاح */
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
 </head>
 <body>
 
-<div class="card">
-    <h1>✨ حياك!</h1>
-    <p>انسخ كود الخصم واستمتع بطلبك 👇</p>
+<div class="ornamental-frame">
+    <div class="card">
+        <h1>إجعل فعاليتك<br>حديث الجميع <span class="gold-star">✨</span></h1>
+        <p>تنفيذ . تجربة متكاملة . نتائج استثنائية!</p>
 
-```
-<div class="coupon-box" onclick="copyAndRedirect()">
-    <span id="couponCode">RIDA10</span>
-    <div class="hint">(اضغط للنسخ والتوجه للإنستقرام)</div>
-</div>
+        <div class="coupon-box" onclick="copyAndRedirect()">
+            <span id="couponCode">RIDA10</span>
+            <div class="hint">(اضغط للنسخ والتوجه للإنستقرام)</div>
+        </div>
 
-<div id="msg" class="success-msg">✅ تم النسخ! جاري تحويلك...</div>
-```
-
+        <div id="msg" class="success-msg">✅ تم النسخ! جاري تحويلك...</div>
+    </div>
 </div>
 
 <script>
+    // السكربت كما هو، لا يحتاج تعديل
     function copyAndRedirect() {
         const code = document.getElementById('couponCode').innerText;
         
         navigator.clipboard.writeText(code).then(() => {
             const msg = document.getElementById('msg');
             msg.style.display = 'block';
-
             setTimeout(() => {
                 window.location.href = "https://www.instagram.com/lilasksa";
             }, 1000);
         }).catch(() => {
             alert('تم نسخ الكود: ' + code);
-            setTimeout(() => {
-                window.location.href = "https://www.instagram.com/lilasksa";
-            }, 1000);
+            window.location.href = "https://www.instagram.com/lilasksa";
         });
     }
 </script>
