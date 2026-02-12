@@ -21,12 +21,12 @@
 ```
     .card {
         background: linear-gradient(180deg, #C8A5CA 0%, #B084B5 100%);
-        padding: 3rem 2rem;
+        padding: 2rem 1.5rem;
         border-radius: 15px;
         text-align: center;
-        max-width: 500px;
+        max-width: 450px;
         width: 90%;
-        border: 8px solid #fff;
+        border: 6px solid #fff;
         box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         position: relative;
         box-sizing: border-box;
@@ -36,30 +36,30 @@
     .card::after {
         content: '';
         position: absolute;
-        width: 40px;
-        height: 40px;
-        border: 3px solid rgba(255,255,255,0.8);
+        width: 30px;
+        height: 30px;
+        border: 2px solid rgba(255,255,255,0.8);
     }
 
     .card::before {
-        top: 10px;
-        right: 10px;
+        top: 8px;
+        right: 8px;
         border-bottom: none;
         border-left: none;
-        border-top-right-radius: 10px;
+        border-top-right-radius: 8px;
     }
 
     .card::after {
-        top: 10px;
-        left: 10px;
+        top: 8px;
+        left: 8px;
         border-bottom: none;
         border-right: none;
-        border-top-left-radius: 10px;
+        border-top-left-radius: 8px;
     }
 
     h1 {
         color: #fff;
-        font-size: clamp(1.5rem, 4vw, 1.8rem);
+        font-size: clamp(1.4rem, 3.5vw, 1.7rem);
         margin-bottom: 5px;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         font-weight: bold;
@@ -67,28 +67,28 @@
 
     .subtitle {
         color: #fff;
-        font-size: clamp(1.3rem, 4.5vw, 1.6rem);
-        margin: 10px 0 20px 0;
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+        margin: 8px 0 15px 0;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         font-weight: bold;
     }
 
     .features {
         color: rgba(255,255,255,0.95);
-        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-        margin-bottom: 25px;
+        font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+        margin-bottom: 20px;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     }
 
     .coupon-box {
         background: rgba(255,255,255,0.95);
         border: 3px dashed #7B4A7E;
-        padding: 20px 30px;
-        margin: 30px auto;
-        border-radius: 15px;
+        padding: 18px 25px;
+        margin: 25px auto;
+        border-radius: 12px;
         cursor: pointer;
         transition: all 0.3s;
-        max-width: 350px;
+        max-width: 320px;
     }
 
     .coupon-box:hover {
@@ -103,14 +103,14 @@
     .coupon-code {
         display: block;
         color: #5A2D5C;
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-size: clamp(1.6rem, 4.5vw, 2.2rem);
         font-weight: bold;
         letter-spacing: 3px;
         margin-bottom: 8px;
     }
 
     .hint {
-        font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+        font-size: clamp(0.7rem, 2.2vw, 0.85rem);
         color: #7B4A7E;
     }
 
@@ -128,24 +128,24 @@
     .corner-bottom-left,
     .corner-bottom-right {
         position: absolute;
-        width: 40px;
-        height: 40px;
-        border: 3px solid rgba(255,255,255,0.8);
-        bottom: 10px;
+        width: 30px;
+        height: 30px;
+        border: 2px solid rgba(255,255,255,0.8);
+        bottom: 8px;
     }
 
     .corner-bottom-left {
-        left: 10px;
+        left: 8px;
         border-top: none;
         border-right: none;
-        border-bottom-left-radius: 10px;
+        border-bottom-left-radius: 8px;
     }
 
     .corner-bottom-right {
-        right: 10px;
+        right: 8px;
         border-top: none;
         border-left: none;
-        border-bottom-right-radius: 10px;
+        border-bottom-right-radius: 8px;
     }
 </style>
 ```
